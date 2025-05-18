@@ -1,0 +1,44 @@
+import { useState } from 'react';
+import Modal from './Modal';
+
+const SongCard = ({
+  albumImage,
+  releaseDate,
+  artist,
+  title,
+  lyricist,
+  composer,
+}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleImageClick = () => {
+    setIsModalOpen(true);
+  };
+
+  return (
+    <>
+      <div className="dt:w-100 dt:p-6 dt:m-5 ph:w-60 ph:p-3 ph:m-3 w-100 bg-gray-800 rounded-lg shadow">
+        <img
+          onClick={handleImageClick}
+          src={albumImage}
+          alt={`${title} 앨범 커버`}
+          className="w-full rounded mb-4 cursor-pointer transition-opacity hover:opacity-90"
+        />
+        <h2 className="text-2xl font-semibold">{title}</h2>
+        <hr className="my-4" />
+        <p className="text-gray-200">🎤 가수: {artist}</p>
+        <p className="text-gray-200">📝 작사가: {lyricist}</p>
+        <p className="text-gray-200">🎼 작곡가: {composer}</p>
+        <p className="text-gray-400 text-sm mt-2">📅 발매일: {releaseDate}</p>
+      </div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        imageUrl={albumImage}
+      />
+    </>
+  );
+};
+
+export default SongCard;

@@ -1,0 +1,37 @@
+[
+  {
+    "albumImage": "/src/assets/rebel-heart.png",
+    "releaseDate": "2025-01-13",
+    "artist": "IVE",
+    "title": "REBEL HEART",
+    "lyricist": "Nietzsche",
+    "composer": "Emily Harbakk"
+  },
+
+  {
+    "albumImage": "/src/assets/toxic-till-the-end.png",
+    "releaseDate": "2024-12-06",
+    "artist": "ROSE",
+    "title": "TOXIC TILL THE END",
+    "lyricist": "ROSE",
+    "composer": "ROSE"
+  },
+
+  {
+    "albumImage": "/src/assets/older.png",
+    "releaseDate": "2018-11-09",
+    "artist": "Sasha Alex Sloan",
+    "title": "OLDER",
+    "lyricist": "King Henry",
+    "composer": "King Henry"
+  },
+
+  {
+    "albumImage": "/src/assets/비가 오는 날엔.png",
+    "releaseDate": "2021-08-04",
+    "artist": "헤이즈",
+    "title": "비가 오는 날엔",
+    "lyricist": "최규성",
+    "composer": "헤이즈"
+  }
+]
