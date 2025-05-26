@@ -1,19 +1,26 @@
-function updatePrice(id, adjustment) {
-  const p = document.getElementById(id);
-  let curPrice = parseInt(p.textContent.replace("₩", "").replace(",", ""));
+function updatePrice(nightlyId, totalId, adjustment, nights = 5) {
+  const nightlyEl = document.getElementById(nightlyId);
+  const totalEl = document.getElementById(totalId);
 
-  curPrice += adjustment;
-  if (curPrice < 0) {
-    curPrice = 0;
+  let nightlyText = nightlyEl.textContent
+    .split("/박")[0]
+    .replace("₩", "")
+    .replace(",", "")
+    .trim();
+  let nigthlyPrice = parseInt(nightlyText) + adjustment;
+
+  if (nigthlyPrice < 0) {
+    nigthlyPrice = 0;
   }
 
-  p.textContent = `₩${curPrice.toLocaleString()}`;
+  nightlyEl.textContent = `₩${nigthlyPrice.toLocaleString()} /박`;
+  totalEl.textContent = `· 총액 ₩${(nigthlyPrice * nights).toLocaleString()}`;
 }
 
 document.getElementById("increase").addEventListener("click", () => {
-  updatePrice("price", 10000);
+  updatePrice("nightly", "total", 10000);
 });
 
 document.getElementById("decrease").addEventListener("click", () => {
-  updatePrice("price", -10000);
+  updatePrice("nightly", "total", -10000);
 });
